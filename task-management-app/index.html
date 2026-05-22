@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroTask - Premium Task Management</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas for celebration confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Login Page -->
+    <div id="login-page" class="login-wrapper">
+        <div class="login-bg-glow"></div>
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h2>AeroTask</h2>
+                <p>Maximize your productivity with style</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group-floating">
+                    <input type="text" id="username" placeholder=" " required autocomplete="username">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                </div>
+                <div class="form-group-floating password-field-wrap">
+                    <input type="password" id="password" placeholder=" " required autocomplete="current-password">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <button type="button" id="toggle-password" class="btn-eye" tabindex="-1" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </button>
+                </div>
+                
+                <div class="login-actions">
+                    <button type="submit" class="btn-primary-gradient">
+                        <span>Sign In</span> <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="button" id="demo-login-btn" class="btn-secondary-glow">
+                        <i class="fas fa-bolt"></i> Demo Login
+                    </button>
+                </div>
+                <div id="login-error" class="login-error-alert">
+                    <i class="fas fa-circle-exclamation"></i> Invalid credentials. Use <strong>admin</strong> & <strong>12345</strong>
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                <p><i class="fas fa-circle-info"></i> Demo credentials &mdash; Username: <strong>admin</strong> &nbsp;|&nbsp; Password: <strong>12345</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Dashboard -->
+    <div id="app-dashboard" class="dashboard-wrapper" style="display: none;">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-layer-group"></i>
+                    <span>AeroTask</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-view="kanban">
+                        <a href="#"><i class="fas fa-columns"></i> <span>Kanban Board</span></a>
+                    </li>
+                    <li data-view="list">
+                        <a href="#"><i class="fas fa-list-check"></i> <span>Task List</span></a>
+                    </li>
+                    <li data-view="grid">
+                        <a href="#"><i class="fas fa-grip"></i> <span>Task Grid</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">Y</div>
+                    <div class="user-info">
+                        <h4 class="username-display">Yonas Leykun</h4>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+                <button id="logout-button" class="btn-logout" title="Log Out">
+                    <i class="fas fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Header bar -->
+            <header class="top-bar">
+                <div class="header-welcome">
+                    <h1 id="greeting">Hello, Yonas!</h1>
+                    <p id="current-date-display">Thursday, May 21, 2026</p>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search tasks...">
+                    </div>
+                    <div class="notification-bell" id="notification-trigger">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="overdue-count-badge" style="display: none;">0</span>
+                    </div>
+                    <button id="add-task-header-btn" class="btn-add-task">
+                        <i class="fas fa-plus"></i> <span>New Task</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Metrics / Summary Cards -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon total">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="metric-data">
+                        <h3 id="metric-total">0</h3>
+                        <p>Total Tasks</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon in-progress">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="metric-data">
+                        <h3 id="metric-progress">0</h3>
+                        <p>In Progress</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon completed">
+                        <i class="fas fa-circle-check"></i>
+                    </div>
+                    <div class="metric-data">
+                        <h3 id="metric-completed">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon overdue">
+                        <i class="fas fa-circle-exclamation"></i>
+                    </div>
+                    <div class="metric-data">
+                        <h3 id="metric-overdue">0</h3>
+                        <p>Overdue</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters & Sorting Panel -->
+            <section class="filters-panel">
+                <div class="filters-left">
+                    <div class="filter-group">
+                        <label for="priority-filter">Priority:</label>
+                        <select id="priority-filter">
+                            <option value="All">All Priorities</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="tag-filter">Category:</label>
+                        <select id="tag-filter">
+                            <option value="All">All Categories</option>
+                            <!-- Dynamic category list populated by script -->
+                        </select>
+                    </div>
+                </div>
+                <div class="filters-right">
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by">
+                            <option value="endDate-asc">Due Date (Soonest)</option>
+                            <option value="endDate-desc">Due Date (Latest)</option>
+                            <option value="priority-desc">Priority (High to Low)</option>
+                            <option value="name-asc">Title (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dynamic Workspace Content -->
+            <section class="workspace-views">
+                <!-- Kanban View -->
+                <div id="view-kanban" class="view-pane active">
+                    <div class="kanban-board">
+                        <!-- Column 1: Not Started -->
+                        <div class="kanban-column" data-status="Not Started" id="col-not-started">
+                            <div class="column-header">
+                                <span class="column-title">Not Started</span>
+                                <span class="column-count" id="count-not-started">0</span>
+                            </div>
+                            <div class="kanban-cards-container dropzone" id="cards-not-started">
+                                <!-- Cards injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Started -->
+                        <div class="kanban-column" data-status="Started" id="col-started">
+                            <div class="column-header">
+                                <span class="column-title">In Progress</span>
+                                <span class="column-count" id="count-started">0</span>
+                            </div>
+                            <div class="kanban-cards-container dropzone" id="cards-started">
+                                <!-- Cards injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Finished -->
+                        <div class="kanban-column" data-status="Finished" id="col-finished">
+                            <div class="column-header">
+                                <span class="column-title">Completed</span>
+                                <span class="column-count" id="count-finished">0</span>
+                            </div>
+                            <div class="kanban-cards-container dropzone" id="cards-finished">
+                                <!-- Cards injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List View (Table) -->
+                <div id="view-list" class="view-pane">
+                    <div class="table-container">
+                        <table class="tasks-table">
+                            <thead>
+                                <tr>
+                                    <th>Task Details</th>
+                                    <th>Category</th>
+                                    <th>Duration</th>
+                                    <th>Due Date</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th class="actions-col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-tasks-body">
+                                <!-- Table rows injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="empty-state-placeholder" id="list-empty-state" style="display: none;">
+                        <i class="fas fa-list-check"></i>
+                        <p>No tasks found. Create a new task to get started!</p>
+                    </div>
+                </div>
+
+                <!-- Grid View (Cards) -->
+                <div id="view-grid" class="view-pane">
+                    <div class="grid-container" id="grid-tasks-container">
+                        <!-- Grid cards injected here -->
+                    </div>
+                    <div class="empty-state-placeholder" id="grid-empty-state" style="display: none;">
+                        <i class="fas fa-table-cells"></i>
+                        <p>No tasks found. Create a new task to get started!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Task Form Dialog Modal -->
+    <div id="task-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Create New Task</h3>
+                <button type="button" class="btn-close" id="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="task-form" class="modal-form">
+                <!-- Hidden input for task index when editing -->
+                <input type="hidden" id="edit-task-index" value="">
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="task-name">Task Title *</label>
+                        <input type="text" id="task-name" placeholder="Enter task title" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="task-desc">Description</label>
+                        <textarea id="task-desc" rows="3" placeholder="Describe the objectives or details of this task..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row split">
+                    <div class="form-group">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">Due Date</label>
+                        <input type="date" id="end-date" required>
+                    </div>
+                </div>
+
+                <div class="form-row split-three">
+                    <div class="form-group">
+                        <label for="progress-status">Status</label>
+                        <select id="progress-status">
+                            <option value="Not Started">Not Started</option>
+                            <option value="Started">In Progress</option>
+                            <option value="Finished">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-tag">Category</label>
+                        <select id="task-tag">
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Design">Design</option>
+                            <option value="Code">Code</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Urgent">Urgent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" id="task-form-cancel">Cancel</button>
+                    <button type="submit" class="btn-submit" id="save-task">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Overlay Panel -->
+    <div id="notification-panel" class="notification-panel" style="display: none;">
+        <div class="panel-header">
+            <h4>Notifications & Alerts</h4>
+            <button id="close-notifications-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="panel-body" id="notification-list">
+            <!-- Dynamic alerts go here -->
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

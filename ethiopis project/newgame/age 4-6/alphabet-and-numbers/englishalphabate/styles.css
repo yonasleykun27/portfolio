@@ -1,0 +1,247 @@
+:root {
+    --primary-color: #8bc34a;
+    --primary-light: #aed581;
+    --primary-dark: #689f38;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-light: #f5f5f5;
+    --gray-border: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.site-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-placeholder img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-nav button {
+    background-color: rgba(255,255,255,0.2);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.main-nav button:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: var(--primary-color);
+    padding: 15px;
+    border-radius: 15px;
+    color: var(--white);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.category {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
+}
+
+.item-btn {
+    aspect-ratio: 1;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.character-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    padding: 20px;
+}
+
+.character-display {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    max-width: 500px;
+    width: 90%;
+}
+
+.character {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.back-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.sound-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.sound-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Footer Styles */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 10px;
+    }
+
+    .item-btn {
+        font-size: 1.5rem;
+    }
+
+    .character {
+        font-size: 4rem;
+    }
+
+    .main-nav button {
+        display: none; /* Hide back button on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .item-btn {
+        font-size: 1.2rem;
+    }
+
+    .character {
+        font-size: 3rem;
+    }
+
+    .page-header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}

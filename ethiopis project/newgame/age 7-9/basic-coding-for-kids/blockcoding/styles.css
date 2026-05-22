@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #8bc34a;
+    --primary-light: #aed581;
+    --primary-dark: #689f38;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-light: #f5f5f5;
+    --gray-border: #ddd;
+    --blue: #2196F3;
+    --red: #f44336;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.site-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-placeholder img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-nav button {
+    background-color: rgba(255,255,255,0.2);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.main-nav button:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+#langBtn {
+    background-color: rgba(255,255,255,0.2);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+#langBtn:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 1rem;
+}
+
+#title {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--primary-dark);
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+}
+
+.block {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    cursor: move;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.workspace {
+    min-height: 300px;
+    width: 300px;
+    border: 3px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--gray-light);
+}
+
+#dropHint {
+    color: #666;
+    text-align: center;
+    margin: auto;
+}
+
+.character-area {
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.character {
+    font-size: 60px;
+    transition: all 0.5s ease;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.run-btn {
+    background-color: var(--blue);
+}
+
+.reset-btn {
+    background-color: var(--red);
+}
+
+.dropped-block {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: move;
+}
+
+/* Footer Styles */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    margin-top: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem;
+    }
+    
+    #back-button {
+        display: none;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .blocks, .workspace, .character-area {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .character-area {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 1.5rem;
+    }
+    
+    .block {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Adventure</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon-32x32.png">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-placeholder">
+            <img src="../images/new logo.png" alt="Ethiopis Logo" width="150" height="60" loading="lazy">
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <button id="back-button" data-i18n="nav.back">← Back</button>
+            <button id="langBtn" class="btn">በአማርኛ</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <h1 id="title">Math Adventure</h1>
+            <div class="character" id="character">🧙‍♂️</div>
+            
+            <div class="problem" id="problem">
+                <span id="num1">5</span>
+                <span id="operator">+</span>
+                <span id="num2">3</span>
+                <span>=</span>
+                <input type="number" id="answer" placeholder="?">
+            </div>
+
+            <div class="controls">
+                <button id="checkBtn" class="btn">Check</button>
+                <button id="newBtn" class="btn">New Problem</button>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+                <p id="level">Level: 1</p>
+                <p id="score">Score: 0</p>
+            </div>
+
+            <div class="operations">
+                <button class="op-btn active" data-op="add">+</button>
+                <button class="op-btn" data-op="subtract">-</button>
+                <button class="op-btn" data-op="multiply">×</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copyright">© 2025 Ethiopis. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

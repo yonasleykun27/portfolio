@@ -1,0 +1,139 @@
+/* manage_system.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(../img/stu_bac.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.page-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 50%;
+    height: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add some padding to main */
+}
+
+nav {
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 12px;
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #007bff;
+}
+
+.admin-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    justify-content: center; /* Center the links */
+}
+
+.admin-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-links a:hover {
+    background-color: #0056b3;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) { /* Mobile */
+    .admin-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links horizontally */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    .admin-links a {
+        width: 100%; /* Make links take full width */
+        text-align: center; /* Center text inside links */
+        padding: 10px; /* Adjust padding if needed */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    nav {
+        flex-direction: column; /* Stack nav items */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    .site-title {
+        margin-bottom: 10px; /* Add some space below the title */
+    }
+
+    nav a {
+        margin: 5px 0; /* Add space between stacked nav links */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    main {
+        padding: 10px; /* Reduce main padding on mobile */
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Tablet */
+    .admin-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+footer {
+    background-color: #004080; 
+    color: white;
+    text-align: center;
+    padding: 10px 0; 
+    margin-top: 20px;
+    width: 100%; 
+}
+
+footer p {
+    margin: 0;
+}

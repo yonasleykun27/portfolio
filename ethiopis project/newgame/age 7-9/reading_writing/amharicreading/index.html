@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amharic Reading - For Kids</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-placeholder">
+            <img src="../images/new logo.png" alt="Ethiopis Logo" width="150" height="60" loading="lazy"/>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <button id="back-button" data-i18n="nav.back">← Back</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="main-title">Amharic Reading Practice</h1>
+        <div class="header-controls">
+            <button id="language-toggle" class="btn">አማርኛ</button>
+            <button id="voice-toggle" class="btn">🔊 Voice On</button>
+        </div>
+
+        <div class="lesson-container">
+            <div class="lesson-card">
+                <h2 id="lesson1-title">Lesson 1: Basic Letters</h2>
+                <div class="fidel-display">
+                    <span>ሀ</span>
+                    <span>ለ</span>
+                    <span>ሐ</span>
+                    <span>መ</span>
+                    <span>ሠ</span>
+                </div>
+                <p id="lesson1-text">Let's learn the first five letters of the Amharic alphabet. Try to say each sound!</p>
+                <button class="practice-btn" id="practice1-btn">Practice Sounds</button>
+            </div>
+
+            <div class="lesson-card">
+                <h2 id="lesson2-title">Lesson 2: Simple Words</h2>
+                <div class="word-examples">
+                    <div class="word-card" data-amharic="ማር">
+                        <h3>ማር</h3>
+                        <p id="word1-text">Honey</p>
+                    </div>
+                    <div class="word-card" data-amharic="ቤት">
+                        <h3>ቤት</h3>
+                        <p id="word2-text">House</p>
+                    </div>
+                    <div class="word-card" data-amharic="አባት">
+                        <h3>አባት</h3>
+                        <p id="word3-text">Father</p>
+                    </div>
+                </div>
+                <button class="practice-btn" id="practice2-btn">Read Words</button>
+            </div>
+
+            <div class="lesson-card">
+                <h2 id="lesson3-title">Lesson 3: Short Sentences</h2>
+                <div class="sentence-example" data-amharic="አባት ቤት ውስጥ ነው።">
+                    <p class="amharic-sentence">አባት ቤት ውስጥ ነው።</p>
+                    <p id="sentence1-text">Father is inside the house.</p>
+                </div>
+                <div class="sentence-example" data-amharic="ማር ጣፋጭ ነው።">
+                    <p class="amharic-sentence">ማር ጣፋጭ ነው።</p>
+                    <p id="sentence2-text">Honey is sweet.</p>
+                </div>
+                <button class="practice-btn" id="practice3-btn">Read Sentences</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copyright">© 2025 Ethiopis. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

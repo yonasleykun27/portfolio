@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 2622 >>
+stream
+BT /F1 26 Tf 72 730 Td (Yonas Leykun) Tj ET
+BT /F2 13 Tf 72 708 Td (Software Engineer & Full Stack Developer) Tj ET
+BT /F2 10 Tf 72 685 Td (Email: yonasleykun27@gmail.com   |   Phone: +251 988 145 423   |   Addis Ababa, Ethiopia) Tj ET
+0.8 0.8 0.8 RG
+1 w
+72 672 m
+540 672 l
+S
+BT /F1 13 Tf 72 645 Td (EDUCATION) Tj ET
+BT /F1 10.5 Tf 72 625 Td (Debre Berhan University) Tj ET
+BT /F2 10.5 Tf 210 625 Td (- B.Sc. in Information Systems) Tj ET
+BT /F2 9.5 Tf 450 625 Td (2025 - Present) Tj ET
+BT /F1 10.5 Tf 72 605 Td (Elmwood Institute) Tj ET
+BT /F2 10.5 Tf 210 605 Td (- Software Engineering Degree) Tj ET
+BT /F2 9.5 Tf 450 605 Td (2026 - Present) Tj ET
+BT /F1 10.5 Tf 72 585 Td (Evangadi Network) Tj ET
+BT /F2 10.5 Tf 210 585 Td (- Fullstack Web Application Development) Tj ET
+BT /F2 9.5 Tf 450 585 Td (2025) Tj ET
+0.8 0.8 0.8 RG
+1 w
+72 570 m
+540 570 l
+S
+BT /F1 13 Tf 72 545 Td (TECHNICAL SKILLS) Tj ET
+BT /F1 10.5 Tf 72 525 Td (Frontend:) Tj ET
+BT /F2 9.5 Tf 170 525 Td (React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap) Tj ET
+BT /F1 10.5 Tf 72 505 Td (Backend & DB:) Tj ET
+BT /F2 9.5 Tf 170 505 Td (Node.js, Express.js, Laravel, Python, C++, MongoDB, PostgreSQL, MySQL) Tj ET
+BT /F1 10.5 Tf 72 485 Td (Tools & Skills:) Tj ET
+BT /F2 9.5 Tf 170 485 Td (Git, GitHub, Docker, REST APIs, Postman, Figma, UI/UX Design) Tj ET
+0.8 0.8 0.8 RG
+1 w
+72 470 m
+540 470 l
+S
+BT /F1 13 Tf 72 445 Td (SELECTED PROJECTS) Tj ET
+BT /F1 11 Tf 72 425 Td (DBU Student Document System) Tj ET
+BT /F2 9.5 Tf 250 425 Td (- Secure student records platform with custom search & indexing.) Tj ET
+BT /F1 11 Tf 72 405 Td (Ethiopis Amharic Portal) Tj ET
+BT /F2 9.5 Tf 250 405 Td (- Interactive quiz modules, translation tools, and audio synthesis.) Tj ET
+BT /F1 11 Tf 72 385 Td (AeroTask Dashboard) Tj ET
+BT /F2 9.5 Tf 250 385 Td (- SaaS workflow manager featuring drag-and-drop Kanban interface.) Tj ET
+BT /F1 11 Tf 72 365 Td (Cinematica Catalog) Tj ET
+BT /F2 9.5 Tf 250 365 Td (- Movie catalog app integrated with Async Search and the TMDB API.) Tj ET
+0.8 0.8 0.8 RG
+1 w
+72 350 m
+540 350 l
+S
+BT /F1 13 Tf 72 325 Td (CERTIFICATIONS & AWARDS) Tj ET
+BT /F1 10.5 Tf 72 305 Td (Fullstack Web Development) Tj ET
+BT /F2 10 Tf 250 305 Td (- Evangadi Network (2025)) Tj ET
+BT /F1 10.5 Tf 72 285 Td (Career Pathway Certificate) Tj ET
+BT /F2 10 Tf 250 285 Td (- ALX Africa (2025)) Tj ET
+BT /F1 10.5 Tf 72 265 Td (Virtual Assistant Foundations) Tj ET
+BT /F2 10 Tf 250 265 Td (- ALX Africa (2025)) Tj ET
+0.8 0.8 0.8 RG
+1 w
+72 245 m
+540 245 l
+S
+BT /F2 9 Tf 180 205 Td (This document was dynamically compiled via the portfolio system.) Tj ET
+
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000326 00000 n 
+0000003000 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3070
+%%EOF

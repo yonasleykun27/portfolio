@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Coding Game</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon-32x32.png">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-placeholder">
+            <img src="../images/new logo.png" alt="Ethiopis Logo" width="150" height="60" loading="lazy">
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <button id="back-button" data-i18n="nav.back">← Back</button>
+            <button id="langBtn" class="btn">በአማርኛ</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 id="title">Block Coding Game</h1>
+            
+            <div class="blocks">
+                <div class="block" draggable="true" id="moveBlock">Move</div>
+                <div class="block" draggable="true" id="turnBlock">Turn</div>
+                <div class="block" draggable="true" id="jumpBlock">Jump</div>
+            </div>
+            
+            <div class="workspace" id="workspace">
+                <p id="dropHint">Drag blocks here to build your code!</p>
+            </div>
+            
+            <div class="character-area">
+                <div class="character" id="character">🤖</div>
+            </div>
+            
+            <button id="runBtn" class="btn run-btn">Run Code</button>
+            <button id="resetBtn" class="btn reset-btn">Reset</button>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copyright">© 2025 Ethiopis. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

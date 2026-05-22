@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Projects for Kids</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-placeholder">
+            <img src="../images/new logo.png" alt="Ethiopis Logo" width="150" height="60" loading="lazy">
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <button id="back-button" data-i18n="nav.back">← Back</button>
+            <button id="langBtn" class="btn">በአማርኛ</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="title">Tech Projects</h1>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="beginner">Beginner</button>
+            <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+        </div>
+
+        <div class="projects-container" id="projectsContainer">
+            <!-- Projects will be added by JavaScript -->
+        </div>
+
+        <div class="project-details" id="projectDetails">
+            <div class="details-content">
+                <h2 id="detailsTitle">Project Title</h2>
+                <p id="detailsDesc">Project description goes here</p>
+                <div class="materials">
+                    <h3 id="materialsTitle">Materials Needed:</h3>
+                    <ul id="materialsList"></ul>
+                </div>
+                <button id="closeDetails" class="btn">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copyright">© 2025 Ethiopis. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

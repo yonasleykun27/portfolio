@@ -1,0 +1,149 @@
+:root {
+    --primary: #2ECC71;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    font-family: 'Comic Neue', 'Noto Sans Ethiopic', cursive;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languageToggle {
+    background-color: var(--white);
+    color: var(--primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: 'Comic Neue', 'Noto Sans Ethiopic', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#languageToggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.animal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.animal-item {
+    padding: 1rem;
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.animal-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.habitat-dropzone {
+    border: 4px dashed var(--primary);
+    height: 200px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background-color: rgba(46, 204, 113, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.animal-display {
+    text-align: center;
+    margin-top: 2rem;
+    transition: all 0.3s;
+}
+
+.animal-display img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid var(--primary);
+    margin-bottom: 1rem;
+}
+
+.language-change {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+    .animal-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .animal-item {
+        font-size: 14px;
+        padding: 0.8rem;
+    }
+    
+    .habitat-dropzone {
+        font-size: 16px;
+        height: 180px;
+    }
+    
+    #languageToggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .animal-item {
+        font-size: 13px;
+    }
+    
+    .habitat-dropzone {
+        font-size: 14px;
+        height: 160px;
+        padding: 0.8rem;
+    }
+}
