@@ -60,7 +60,7 @@ Follow these quick steps to launch the repository on your local computer for dev
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/yonasleykun27/portfolio.git
 cd portfolio
 ```
 
