@@ -317,7 +317,7 @@ img {
 }
 
 .section-6 .left-side-4 {
-  background-image: url(\../images/home/macbook-pro.jpg);
+  background-image: url("../images/home/macbook-pro.jpg");
   background-size: initial;
   background-color: #fafafa;
   background-position: bottom;

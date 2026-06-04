@@ -129,7 +129,7 @@ img {
 }
 
 .section-6 .left-side-4 {
-  background-image: url(\../images/home/macbook-pro.jpg);
+  background-image: url("../images/home/macbook-pro.jpg");
   height: 580px;
   background-position: center;
   padding: 15px 0px 0px;
