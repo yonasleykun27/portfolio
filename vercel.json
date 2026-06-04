@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/appleproject", "destination": "/appleproject/index.html" },
+    { "source": "/applebootstrapproject", "destination": "/applebootstrapproject/index.html" },
+    { "source": "/ethiopis-project", "destination": "/ethiopis-project/index.html" },
+    { "source": "/dbuiddms-project", "destination": "/dbuiddms-project/index.html" },
+    { "source": "/task-management-app", "destination": "/task-management-app/index.html" }
+  ]
+}
