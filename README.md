@@ -13,7 +13,7 @@ A state-of-the-art, high-fidelity, and fully responsive personal portfolio desig
 ---
 
 ## 🔗 Live Demo
-> **Check out the live deployment here:** [Your Live Website URL goes here!]
+> **Check out the live deployment here:** [https://yonasleykun.vercel.app/]
 
 ---
 
